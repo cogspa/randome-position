@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blue Div</title>
+    <style>
+      /* optional styling for the page */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // create a new div element
+      var div = document.createElement("div");
+
+      // set the width and height to 200px
+      div.style.width = "200px";
+      div.style.height = "200px";
+
+      // set the background color to blue
+      div.style.backgroundColor = "blue";
+
+      // set the position to absolute
+      div.style.position = "absolute";
+
+      // add the div to the document body
+      document.body.appendChild(div);
+
+      // create a function that changes the top and left location of the div
+      function changeLocation() {
+        // generate a random number between 0 and the window width minus 200px
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        var randomLeft = Math.floor(Math.random() * (windowWidth - 200));
+        var randomTop = Math.floor(Math.random() * (windowHeight - 200));
+
+        // set the top and left location of the div to the random numbers
+        div.style.left = randomLeft + "px";
+        div.style.top = randomTop + "px";
+      }
+
+      // call the changeLocation function every 0.8 seconds
+      setInterval(changeLocation, 800);
+    </script>
+  </body>
+</html>
